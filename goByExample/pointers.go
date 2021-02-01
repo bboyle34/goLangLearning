@@ -2,10 +2,20 @@ package main
 
 import "fmt"
 
+// we'll show how pointers work in contrast to values with 2
+// functions: zeroval and zeroptr. zeroval has an int
+// parameter, so arguments will be passed to it by value.
+// zeroval will get a copy of ival distinct from the one in the 
+// calling function
 func zeroval(ival int) {
     ival = 0
 }
 
+// zeroptr in contrast has an *int parameter, meaning that it
+// takes an int pointer. the *iptr code in the function body
+// then dereferences the pointer from itr memory address to
+// the current avalue at that address. assigning a value to a
+// dereferenced pointer changes the value at the references address
 func zeroptr(iptr *int) {
     *iptr = 0
 }
@@ -17,8 +27,10 @@ func main() {
     zeroval(i)
     fmt.Println("zeroval:", i)
 
+    // the &i syntax gives the memory address of i, or a pointer to i
     zeroptr(&i)
     fmt.Println("zeroptr:", i)
 
+    // pointers can be printed too
     fmt.Println("pointer:", &i)
 }
