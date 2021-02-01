@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-    fmt.Println("Hello Brendan, it is", time.Now())
+    fmt.Println("Hello Brendan, it is", time.Now().Format("2006-01-02 3:4:5 PM"))
     fmt.Println()
 
     attempt := 5
