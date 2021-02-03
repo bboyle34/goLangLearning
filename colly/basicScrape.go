@@ -16,7 +16,11 @@ func writeFile(filename string, data []string) error {
         return err
     }
     defer file.Close()
+<<<<<<< HEAD
     fmt.Printf("\n%T\n", file)
+=======
+
+>>>>>>> 1ce437176c86b25cc9dc3d3cabe86578e9af6dbc
     fmt.Fprintln(file, "")
     fmt.Fprintln(file, "####################")
     fmt.Fprintln(file, "Links for apnews.com")
