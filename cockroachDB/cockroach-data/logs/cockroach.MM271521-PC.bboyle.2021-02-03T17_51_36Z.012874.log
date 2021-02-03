@@ -1,0 +1,164 @@
+I210203 17:51:36.759808 1 util/log/sync_buffer.go:196 ⋮ [config] file created at: 2021/02/03 17:51:36
+I210203 17:51:36.759817 1 util/log/sync_buffer.go:196 ⋮ [config] running on machine: ‹MM271521-PC›
+I210203 17:51:36.759823 1 util/log/sync_buffer.go:196 ⋮ [config] binary: CockroachDB CCL v20.2.4 (x86_64-unknown-linux-gnu, built 2021/01/21 00:08:24, go1.13.14)
+I210203 17:51:36.759827 1 util/log/sync_buffer.go:196 ⋮ [config] arguments: ‹[cockroach start --insecure --join=localhost:26257,localhost:26258,localhost:26259]›
+I210203 17:51:36.759838 1 util/log/sync_buffer.go:196 ⋮ [config] line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+W210203 17:51:36.759079 1 cli/start.go:1137 ⋮ ALL SECURITY CONTROLS HAVE BEEN DISABLED!
+
+This mode is intended for non-production testing only.
+
+In this mode:
+- Your cluster is open to any client that can access ‹any of your IP addresses›.
+- Intruders with access to your machine or network can observe client-server traffic.
+- Intruders can log in without password and read or write any data in the cluster.
+- Intruders can consume all your server's resources and cause unavailability.
+I210203 17:51:36.762716 1 cli/start.go:1147 ⋮ To start a secure server without mandating TLS for clients,
+consider --accept-sql-without-tls instead. For other options, see:
+
+- ‹https://go.crdb.dev/issue-v/53404/v20.2›
+- https://www.cockroachlabs.com/docs/v20.2/secure-a-cluster.html
+I210203 17:51:36.762860 1 server/status/recorder.go:605 ⋮ ‹available memory from cgroups (0 B) is unsupported, using system memory 32 GiB instead: no cgroup memory controller detected›
+W210203 17:51:36.762879 1 cli/start.go:981 ⋮ ‹Using the default setting for --cache (128 MiB).›
+‹  A significantly larger value is usually needed for good performance.›
+‹  If you have a dedicated server a reasonable setting is --cache=.25 (7.9 GiB).›
+I210203 17:51:36.762965 1 server/status/recorder.go:605 ⋮ ‹available memory from cgroups (0 B) is unsupported, using system memory 32 GiB instead: no cgroup memory controller detected›
+I210203 17:51:36.762974 1 cli/start.go:1162 ⋮ ‹CockroachDB CCL v20.2.4 (x86_64-unknown-linux-gnu, built 2021/01/21 00:08:24, go1.13.14)›
+I210203 17:51:36.764675 1 server/status/recorder.go:605 ⋮ ‹available memory from cgroups (0 B) is unsupported, using system memory 32 GiB instead: no cgroup memory controller detected›
+I210203 17:51:36.764690 1 server/config.go:428 ⋮ system total memory: ‹32 GiB›
+I210203 17:51:36.764701 1 server/config.go:430 ⋮ server configuration:
+‹max offset             500000000›
+‹cache size             128 MiB›
+‹SQL memory pool size   7.9 GiB›
+‹scan interval          10m0s›
+‹scan min idle time     10ms›
+‹scan max idle time     1s›
+‹event log enabled      true›
+I210203 17:51:36.764737 1 cli/start.go:966 ⋮ process identity: ‹uid 1000 euid 1000 gid 1000 egid 1000›
+I210203 17:51:36.768571 1 cli/start.go:505 ⋮ GEOS loaded from directory ‹/usr/local/lib/cockroach›
+I210203 17:51:36.768593 1 cli/start.go:510 ⋮ starting cockroach node
+E210203 17:51:36.769565 73 server/status/runtime.go:328 ⋮ [n?] could not get initial disk IO counters: open ‹/proc/diskstats›: no such file or directory
+I210203 17:51:36.788959 73 server/server.go:790 ⋮ [n?] monitoring forward clock jumps based on server.clock.forward_jump_check_enabled
+I210203 17:51:36.853834 73 server/config.go:619 ⋮ [n?] 1 storage engine‹› initialized
+I210203 17:51:36.853857 73 server/config.go:622 ⋮ [n?] ‹Pebble cache size: 128 MiB›
+I210203 17:51:36.853864 73 server/config.go:622 ⋮ [n?] ‹store 0: RocksDB, max size 0 B, max open file limit 10000›
+I210203 17:51:36.857671 174 server/server.go:1424 ⋮ [n?] connecting to gossip network to verify cluster ID ‹"3aa307d8-55bd-4735-8399-6d805969bce5"›
+W210203 17:51:36.860929 73 cli/start.go:905 ⋮ neither --listen-addr nor --advertise-addr was specified.
+The server will advertise ‹"MM271521-PC"› to other nodes, is this routable?
+
+Consider using:
+- for local-only servers:  --listen-addr=localhost
+- for multi-node clusters: --advertise-addr=<host/IP addr>
+W210203 17:51:36.862168 73 gossip/gossip.go:1494 ⋮ [n?] no incoming or outgoing connections
+I210203 17:51:36.862205 73 gossip/gossip.go:403 ⋮ [n1] NodeDescriptor set to ‹node_id:1 address:<network_field:"tcp" address_field:"MM271521-PC:26257" > attrs:<> locality:<> ServerVersion:<major_val:20 minor_val:2 patch:0 unstable:0 > build_tag:"v20.2.4" started_at:1612374696862197900 cluster_name:"" sql_address:<network_field:"tcp" address_field:"MM271521-PC:26257" >›
+I210203 17:51:36.863678 195 gossip/client.go:124 ⋮ [n1] started gossip client to ‹localhost:26257›
+I210203 17:51:36.864160 195 gossip/client.go:129 ⋮ [n1] closing client to n1 (‹localhost:26257›): stopping outgoing client to n1 (‹localhost:26257›); loopback connection
+I210203 17:51:36.868131 174 server/server.go:1427 ⋮ [n1] node connected via gossip
+W210203 17:51:36.868139 320 kv/kvserver/replica_range_lease.go:556 ⋮ [n1,s1,r6/1:‹/Table/{SystemCon…-11}›] can't determine lease status of (n1,s1):1 due to node liveness error: node not in the liveness table
+(1) attached stack trace
+  -- stack trace:
+  | github.com/cockroachdb/cockroach/pkg/kv/kvserver.init
+  | 	/go/src/github.com/cockroachdb/cockroach/pkg/kv/kvserver/node_liveness.go:45
+  | runtime.doInit
+  | 	/usr/local/go/src/runtime/proc.go:5228
+  | runtime.doInit
+  | 	/usr/local/go/src/runtime/proc.go:5223
+  | runtime.doInit
+  | 	/usr/local/go/src/runtime/proc.go:5223
+  | runtime.doInit
+  | 	/usr/local/go/src/runtime/proc.go:5223
+  | runtime.doInit
+  | 	/usr/local/go/src/runtime/proc.go:5223
+  | runtime.main
+  | 	/usr/local/go/src/runtime/proc.go:190
+  | runtime.goexit
+  | 	/usr/local/go/src/runtime/asm_amd64.s:1357
+Wraps: (2) node not in the liveness table
+Error types: (1) *withstack.withStack (2) *errutil.leafError
+W210203 17:51:36.868542 320 kv/kvserver/store.go:1704 ⋮ [n1,s1,r6/1:‹/Table/{SystemCon…-11}›] could not gossip system config: ‹[NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown›
+(1) ‹[NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown›
+Error types: (1) *roachpb.NotLeaseHolderError
+I210203 17:51:36.870733 73 server/node.go:430 ⋮ [n1] initialized store [n1,s1]: disk (capacity=472 GiB, available=392 GiB, used=586 KiB, logicalBytes=797 KiB), ranges=35, leases=2, queries=0.00, writes=0.00, bytesPerReplica={p10=0.00 p25=0.00 p50=0.00 p75=376.00 p90=5034.00 pMax=751785.00}, writesPerReplica={p10=0.00 p25=0.00 p50=0.00 p75=0.00 p90=0.00 pMax=0.00}
+I210203 17:51:36.870815 73 kv/kvserver/stores.go:236 ⋮ [n1] read 0 node addresses from persistent storage
+I210203 17:51:36.871456 73 server/node.go:489 ⋮ [n1] started with engine type ‹2›
+I210203 17:51:36.871479 73 server/node.go:491 ⋮ [n1] started with attributes ‹[]›
+I210203 17:51:36.871535 73 server/goroutinedumper/goroutinedumper.go:120 ⋮ [n1] writing goroutine dumps to ‹/home/bboyle/github/goLangLearning/cockroachDB/cockroach-data/logs/goroutine_dump›
+I210203 17:51:36.871561 73 server/heapprofiler/heapprofiler.go:49 ⋮ [n1] writing go heap profiles to ‹/home/bboyle/github/goLangLearning/cockroachDB/cockroach-data/logs/heap_profiler› at least every 1h0m0s
+I210203 17:51:36.871576 73 server/heapprofiler/cgoprofiler.go:53 ⋮ [n1] to enable jmalloc profiling: "export MALLOC_CONF=prof:true" or "ln -s prof:true /etc/malloc.conf"
+I210203 17:51:36.871586 73 server/heapprofiler/statsprofiler.go:54 ⋮ [n1] writing memory stats to ‹/home/bboyle/github/goLangLearning/cockroachDB/cockroach-data/logs/heap_profiler› at last every 1h0m0s
+I210203 17:51:36.871597 73 server/server.go:1544 ⋮ [n1] starting http server at ‹[::]:8080› (use: ‹MM271521-PC:8080›)
+I210203 17:51:36.871612 73 server/server.go:1551 ⋮ [n1] starting grpc/postgres server at ‹[::]:26257›
+I210203 17:51:36.871626 73 server/server.go:1552 ⋮ [n1] advertising CockroachDB node at ‹MM271521-PC:26257›
+I210203 17:51:36.879315 73 sql/sqlliveness/slinstance/slinstance.go:252 ⋮ [n1] starting SQL liveness instance
+I210203 17:51:36.880741 418 sql/temporary_schema.go:510 ⋮ [n1] running temporary object cleanup background job
+I210203 17:51:36.881396 73 server/server_sql.go:792 ⋮ [n1] done ensuring all necessary migrations have run
+I210203 17:51:36.881426 73 server/server.go:1884 ⋮ [n1] serving sql connections
+I210203 17:51:36.881809 452 jobs/job_scheduler.go:346 ⋮ [n1] waiting 4m0s before scheduled jobs daemon start
+I210203 17:51:36.881938 73 cli/start.go:671 ⋮ [config] clusterID: ‹3aa307d8-55bd-4735-8399-6d805969bce5›
+I210203 17:51:36.882030 73 cli/start.go:681 ⋮ node startup completed:
+CockroachDB node starting at 2021-02-03 17:51:36.8815314 +0000 UTC (took 0.1s)
+build:               CCL v20.2.4 @ 2021/01/21 00:08:24 (go1.13.14)
+webui:               ‹http://MM271521-PC:8080›
+sql:                 ‹postgresql://root@MM271521-PC:26257?sslmode=disable›
+RPC client flags:    ‹cockroach <client cmd> --host=MM271521-PC:26257 --insecure›
+logs:                ‹/home/bboyle/github/goLangLearning/cockroachDB/cockroach-data/logs›
+temp dir:            ‹/home/bboyle/github/goLangLearning/cockroachDB/cockroach-data/cockroach-temp233687717›
+external I/O path:   ‹/home/bboyle/github/goLangLearning/cockroachDB/cockroach-data/extern›
+store[0]:            ‹path=/home/bboyle/github/goLangLearning/cockroachDB/cockroach-data›
+storage engine:      pebble
+status:              restarted pre-existing node
+clusterID:           ‹3aa307d8-55bd-4735-8399-6d805969bce5›
+nodeID:              1
+I210203 17:51:36.890826 418 sql/temporary_schema.go:545 ⋮ [n1] found 0 temporary schemas
+I210203 17:51:36.890862 418 sql/temporary_schema.go:548 ⋮ [n1] early exiting temporary schema cleaner as no temporary schemas were found
+I210203 17:51:36.890876 418 sql/temporary_schema.go:549 ⋮ [n1] completed temporary object cleanup job
+I210203 17:51:36.890892 418 sql/temporary_schema.go:627 ⋮ [n1] temporary object cleaner next scheduled to run at 2021-02-03 18:21:36.8802602 +0000 UTC
+I210203 17:51:36.892347 453 server/server_update.go:55 ⋮ [n1] no need to upgrade, cluster already at the newest version
+I210203 17:51:36.897340 208 sql/sqlliveness/slstorage/slstorage.go:342 ⋮ [n1] inserted sqlliveness session ‹cb7dcf842eb44b7fa2b6706a0c19815a›
+I210203 17:51:36.897387 208 sql/sqlliveness/slinstance/slinstance.go:143 ⋮ [n1] created new SQL liveness session ‹cb7dcf842eb44b7fa2b6706a0c19815a›
+I210203 17:51:36.900790 206 sql/event_log.go:162 ⋮ [n1] Event: ‹"node_restart"›, target: 1, info: ‹{Descriptor:{NodeID:1 Address:MM271521-PC:26257 Attrs: Locality: ServerVersion:20.2 BuildTag:v20.2.4 StartedAt:1612374696862197900 LocalityAddress:[] ClusterName: SQLAddress:MM271521-PC:26257} ClusterID:3aa307d8-55bd-4735-8399-6d805969bce5 StartedAt:1612374696862197900 LastUp:1612374594846767100}›
+W210203 17:51:37.863995 448 vendor/google.golang.org/grpc/internal/channelz/logging.go:73 ⋮ ‹grpc: addrConn.createTransport failed to connect to {localhost:26258  <nil> 0 <nil>}. Err: connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:26258: connect: connection refused". Reconnecting...›
+I210203 17:51:37.864087 446 vendor/github.com/cockroachdb/circuitbreaker/circuitbreaker.go:322 ⋮ [n1] circuitbreaker: ‹gossip [::]:26257->localhost:26258› tripped: ‹initial connection heartbeat failed›: ‹rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:26258: connect: connection refused"›
+I210203 17:51:37.864145 446 vendor/github.com/cockroachdb/circuitbreaker/circuitbreaker.go:447 ⋮ [n1] circuitbreaker: ‹gossip [::]:26257->localhost:26258› event: ‹BreakerTripped›
+W210203 17:51:37.864158 446 gossip/client.go:118 ⋮ [n1] failed to start gossip client to ‹localhost:26258›: ‹initial connection heartbeat failed›: ‹rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:26258: connect: connection refused"›
+I210203 17:51:37.864201 80 gossip/gossip.go:1508 ⋮ [n1] node has connected to cluster via gossip
+I210203 17:51:37.865319 80 kv/kvserver/stores.go:255 ⋮ [n1] wrote 0 node addresses to persistent storage
+W210203 17:51:38.864838 448 vendor/google.golang.org/grpc/internal/channelz/logging.go:73 ⋮ ‹grpc: addrConn.createTransport failed to connect to {localhost:26258  <nil> 0 <nil>}. Err: connection error: desc = "transport: Error while dialing cannot reuse client connection". Reconnecting...›
+W210203 17:51:46.872907 332 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210203 17:51:46.873027 332 server/status/runtime.go:522 ⋮ [n1] runtime stats: 86 MiB RSS, 255 goroutines, 23 MiB/33 MiB/40 MiB GO alloc/idle/total, 21 MiB/24 MiB CGO alloc/total, 0.0 CGO/sec, 0.0/0.0 %(u/s)time, 0.0 %gc (10x), 0 B/0 B (r/w)net
+I210203 17:51:54.812500 207 sql/sqlliveness/slstorage/slstorage.go:320 ⋮ [n1] deleted 1 expired SQL liveness sessions
+W210203 17:51:56.872975 332 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210203 17:51:56.873146 332 server/status/runtime.go:522 ⋮ [n1] runtime stats: 92 MiB RSS, 255 goroutines, 18 MiB/35 MiB/48 MiB GO alloc/idle/total, 21 MiB/24 MiB CGO alloc/total, 5.3 CGO/sec, 0.3/0.1 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+I210203 17:51:56.874446 327 kv/kvserver/store.go:2638 ⋮ [n1,s1] sstables (read amplification = 1):
+‹6 [ 91K 1 ]: 91K›
+I210203 17:51:56.874526 327 kv/kvserver/store.go:2639 ⋮ [n1,s1] ‹›
+‹__level_____count____size___score______in__ingest(sz_cnt)____move(sz_cnt)___write(sz_cnt)____read___r-amp___w-amp›
+‹    WAL         2   528 K       -   526 K       -       -       -       -   528 K       -       -       -     1.0›
+‹      0         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      1         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      2         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      3         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      4         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      5         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      6         1    91 K       -   316 K     0 B       0     0 B       0    91 K       1   316 K       1     0.3›
+‹  total         1    91 K       -   528 K     0 B       0     0 B       0   619 K       1   316 K       1     1.2›
+‹  flush         0›
+‹compact         1     0 B          (size == estimated-debt)›
+‹ memtbl         2    16 M›
+‹zmemtbl         0     0 B›
+‹   ztbl         0     0 B›
+‹ bcache        10   226 K   98.1%  (score == hit-rate)›
+‹ tcache         1   616 B   99.6%  (score == hit-rate)›
+‹ titers         0›
+‹ filter         -       -   63.4%  (score == utility)›
+I210203 17:52:05.813532 1 cli/start.go:730 ⋮ received signal 'interrupt'
+I210203 17:52:05.814520 1 cli/start.go:815 ⋮ initiating graceful shutdown of server
+W210203 17:52:06.873331 332 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210203 17:52:06.874254 332 server/status/runtime.go:522 ⋮ [n1] runtime stats: 94 MiB RSS, 259 goroutines, 27 MiB/28 MiB/48 MiB GO alloc/idle/total, 21 MiB/24 MiB CGO alloc/total, 0.1 CGO/sec, 0.2/0.2 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+I210203 17:52:07.418943 950 server/drain.go:174 ⋮ [server drain process] drain remaining: 3
+I210203 17:52:07.419481 950 server/drain.go:176 ⋮ [server drain process] drain details: SQL clients: 1, descriptor leases: 1, liveness record: 1
+I210203 17:52:07.624574 950 server/drain.go:174 ⋮ [server drain process] drain remaining: 0
+I210203 17:52:07.625181 950 util/stop/stopper.go:563 ⋮ [server drain process] quiescing
+W210203 17:52:07.625740 208 sql/sqlliveness/slinstance/slinstance.go:182 ⋮ [n1] exiting heartbeat loop
+W210203 17:52:07.625763 223 jobs/registry.go:672 ⋮ canceling all adopted jobs due to stopper quiescing
+I210203 17:52:07.633170 1 cli/start.go:867 ⋮ server drained and shutdown completed
+E210203 17:52:07.634779 1 cli/error.go:398 ⋮ ‹ERROR: interrupted›
