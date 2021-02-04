@@ -1,0 +1,350 @@
+I210204 21:18:00.627062 1 util/log/sync_buffer.go:196 ⋮ [config] file created at: 2021/02/04 21:18:00
+I210204 21:18:00.627072 1 util/log/sync_buffer.go:196 ⋮ [config] running on machine: ‹MM271521-PC›
+I210204 21:18:00.627078 1 util/log/sync_buffer.go:196 ⋮ [config] binary: CockroachDB CCL v20.2.4 (x86_64-unknown-linux-gnu, built 2021/01/21 00:08:24, go1.13.14)
+I210204 21:18:00.627082 1 util/log/sync_buffer.go:196 ⋮ [config] arguments: ‹[cockroach start --insecure --listen-addr=localhost --join=localhost:26257,locahost:26258,localhost:26259]›
+I210204 21:18:00.627092 1 util/log/sync_buffer.go:196 ⋮ [config] line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+W210204 21:18:00.626463 1 cli/start.go:1137 ⋮ ALL SECURITY CONTROLS HAVE BEEN DISABLED!
+
+This mode is intended for non-production testing only.
+
+In this mode:
+- Your cluster is open to any client that can access ‹localhost›.
+- Intruders with access to your machine or network can observe client-server traffic.
+- Intruders can log in without password and read or write any data in the cluster.
+- Intruders can consume all your server's resources and cause unavailability.
+I210204 21:18:00.630174 1 cli/start.go:1147 ⋮ To start a secure server without mandating TLS for clients,
+consider --accept-sql-without-tls instead. For other options, see:
+
+- ‹https://go.crdb.dev/issue-v/53404/v20.2›
+- https://www.cockroachlabs.com/docs/v20.2/secure-a-cluster.html
+I210204 21:18:00.630311 1 server/status/recorder.go:605 ⋮ ‹available memory from cgroups (0 B) is unsupported, using system memory 32 GiB instead: no cgroup memory controller detected›
+W210204 21:18:00.630329 1 cli/start.go:981 ⋮ ‹Using the default setting for --cache (128 MiB).›
+‹  A significantly larger value is usually needed for good performance.›
+‹  If you have a dedicated server a reasonable setting is --cache=.25 (7.9 GiB).›
+I210204 21:18:00.630413 1 server/status/recorder.go:605 ⋮ ‹available memory from cgroups (0 B) is unsupported, using system memory 32 GiB instead: no cgroup memory controller detected›
+I210204 21:18:00.630422 1 cli/start.go:1162 ⋮ ‹CockroachDB CCL v20.2.4 (x86_64-unknown-linux-gnu, built 2021/01/21 00:08:24, go1.13.14)›
+I210204 21:18:00.632863 1 server/status/recorder.go:605 ⋮ ‹available memory from cgroups (0 B) is unsupported, using system memory 32 GiB instead: no cgroup memory controller detected›
+I210204 21:18:00.632884 1 server/config.go:428 ⋮ system total memory: ‹32 GiB›
+I210204 21:18:00.632896 1 server/config.go:430 ⋮ server configuration:
+‹max offset             500000000›
+‹cache size             128 MiB›
+‹SQL memory pool size   7.9 GiB›
+‹scan interval          10m0s›
+‹scan min idle time     10ms›
+‹scan max idle time     1s›
+‹event log enabled      true›
+I210204 21:18:00.632933 1 cli/start.go:966 ⋮ process identity: ‹uid 1000 euid 1000 gid 1000 egid 1000›
+I210204 21:18:00.636953 1 cli/start.go:505 ⋮ GEOS loaded from directory ‹/usr/local/lib/cockroach›
+I210204 21:18:00.636985 1 cli/start.go:510 ⋮ starting cockroach node
+E210204 21:18:00.637889 103 server/status/runtime.go:328 ⋮ [n?] could not get initial disk IO counters: open ‹/proc/diskstats›: no such file or directory
+I210204 21:18:00.655429 103 server/server.go:790 ⋮ [n?] monitoring forward clock jumps based on server.clock.forward_jump_check_enabled
+I210204 21:18:00.671727 103 server/config.go:619 ⋮ [n?] 1 storage engine‹› initialized
+I210204 21:18:00.671746 103 server/config.go:622 ⋮ [n?] ‹Pebble cache size: 128 MiB›
+I210204 21:18:00.671753 103 server/config.go:622 ⋮ [n?] ‹store 0: RocksDB, max size 0 B, max open file limit 10000›
+I210204 21:18:00.675781 198 server/server.go:1424 ⋮ [n?] connecting to gossip network to verify cluster ID ‹"3aa307d8-55bd-4735-8399-6d805969bce5"›
+W210204 21:18:00.676863 103 gossip/gossip.go:1494 ⋮ [n?] no incoming or outgoing connections
+I210204 21:18:00.676896 103 gossip/gossip.go:403 ⋮ [n1] NodeDescriptor set to ‹node_id:1 address:<network_field:"tcp" address_field:"localhost:26257" > attrs:<> locality:<> ServerVersion:<major_val:20 minor_val:2 patch:0 unstable:0 > build_tag:"v20.2.4" started_at:1612473480676889000 cluster_name:"" sql_address:<network_field:"tcp" address_field:"localhost:26257" >›
+W210204 21:18:00.688540 200 gossip/gossip.go:1277 ⋮ [n1] invalid bootstrap address: ‹&{typ:tcp addr:locahost:26258}›, ‹lookup locahost on 10.20.200.53:53: no such host›
+W210204 21:18:00.689179 203 vendor/google.golang.org/grpc/internal/channelz/logging.go:73 ⋮ ‹grpc: addrConn.createTransport failed to connect to {localhost:26259  <nil> 0 <nil>}. Err: connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:26259: connect: connection refused". Reconnecting...›
+I210204 21:18:00.689233 92 vendor/github.com/cockroachdb/circuitbreaker/circuitbreaker.go:322 ⋮ [n1] circuitbreaker: ‹gossip 127.0.0.1:26257->localhost:26259› tripped: ‹initial connection heartbeat failed›: ‹rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:26259: connect: connection refused"›
+I210204 21:18:00.689322 92 vendor/github.com/cockroachdb/circuitbreaker/circuitbreaker.go:447 ⋮ [n1] circuitbreaker: ‹gossip 127.0.0.1:26257->localhost:26259› event: ‹BreakerTripped›
+W210204 21:18:00.689334 92 gossip/client.go:118 ⋮ [n1] failed to start gossip client to ‹localhost:26259›: ‹initial connection heartbeat failed›: ‹rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing dial tcp 127.0.0.1:26259: connect: connection refused"›
+I210204 21:18:00.693892 198 server/server.go:1427 ⋮ [n1] node connected via gossip
+W210204 21:18:00.694444 311 kv/kvserver/replica_range_lease.go:556 ⋮ [n1,s1,r6/1:‹/Table/{SystemCon…-11}›] can't determine lease status of (n1,s1):1 due to node liveness error: node not in the liveness table
+(1) attached stack trace
+  -- stack trace:
+  | github.com/cockroachdb/cockroach/pkg/kv/kvserver.init
+  | 	/go/src/github.com/cockroachdb/cockroach/pkg/kv/kvserver/node_liveness.go:45
+  | runtime.doInit
+  | 	/usr/local/go/src/runtime/proc.go:5228
+  | runtime.doInit
+  | 	/usr/local/go/src/runtime/proc.go:5223
+  | runtime.doInit
+  | 	/usr/local/go/src/runtime/proc.go:5223
+  | runtime.doInit
+  | 	/usr/local/go/src/runtime/proc.go:5223
+  | runtime.doInit
+  | 	/usr/local/go/src/runtime/proc.go:5223
+  | runtime.main
+  | 	/usr/local/go/src/runtime/proc.go:190
+  | runtime.goexit
+  | 	/usr/local/go/src/runtime/asm_amd64.s:1357
+Wraps: (2) node not in the liveness table
+Error types: (1) *withstack.withStack (2) *errutil.leafError
+W210204 21:18:00.695177 311 kv/kvserver/store.go:1704 ⋮ [n1,s1,r6/1:‹/Table/{SystemCon…-11}›] could not gossip system config: ‹[NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown›
+(1) ‹[NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown›
+Error types: (1) *roachpb.NotLeaseHolderError
+I210204 21:18:00.698142 103 server/node.go:430 ⋮ [n1] initialized store [n1,s1]: disk (capacity=472 GiB, available=392 GiB, used=6.0 MiB, logicalBytes=43 MiB), ranges=37, leases=1, queries=0.00, writes=0.00, bytesPerReplica={p10=0.00 p25=0.00 p50=146.00 p75=9562.00 p90=32464.00 pMax=44743934.00}, writesPerReplica={p10=0.00 p25=0.00 p50=0.00 p75=0.00 p90=0.00 pMax=0.00}
+I210204 21:18:00.698308 103 kv/kvserver/stores.go:236 ⋮ [n1] read 0 node addresses from persistent storage
+I210204 21:18:00.698894 103 server/node.go:489 ⋮ [n1] started with engine type ‹2›
+I210204 21:18:00.698915 103 server/node.go:491 ⋮ [n1] started with attributes ‹[]›
+I210204 21:18:00.698981 103 server/goroutinedumper/goroutinedumper.go:120 ⋮ [n1] writing goroutine dumps to ‹/home/bboyle/github/goLangLearning/cockroachDB/cockroach-data/logs/goroutine_dump›
+I210204 21:18:00.699011 103 server/heapprofiler/heapprofiler.go:49 ⋮ [n1] writing go heap profiles to ‹/home/bboyle/github/goLangLearning/cockroachDB/cockroach-data/logs/heap_profiler› at least every 1h0m0s
+I210204 21:18:00.699027 103 server/heapprofiler/cgoprofiler.go:53 ⋮ [n1] to enable jmalloc profiling: "export MALLOC_CONF=prof:true" or "ln -s prof:true /etc/malloc.conf"
+I210204 21:18:00.699035 103 server/heapprofiler/statsprofiler.go:54 ⋮ [n1] writing memory stats to ‹/home/bboyle/github/goLangLearning/cockroachDB/cockroach-data/logs/heap_profiler› at last every 1h0m0s
+I210204 21:18:00.699046 103 server/server.go:1544 ⋮ [n1] starting http server at ‹127.0.0.1:8080› (use: ‹localhost:8080›)
+I210204 21:18:00.699060 103 server/server.go:1551 ⋮ [n1] starting grpc/postgres server at ‹127.0.0.1:26257›
+I210204 21:18:00.699072 103 server/server.go:1552 ⋮ [n1] advertising CockroachDB node at ‹localhost:26257›
+I210204 21:18:00.714735 103 sql/sqlliveness/slinstance/slinstance.go:252 ⋮ [n1] starting SQL liveness instance
+I210204 21:18:00.715015 103 server/server_sql.go:792 ⋮ [n1] done ensuring all necessary migrations have run
+I210204 21:18:00.715031 103 server/server.go:1884 ⋮ [n1] serving sql connections
+I210204 21:18:00.715138 103 cli/start.go:671 ⋮ [config] clusterID: ‹3aa307d8-55bd-4735-8399-6d805969bce5›
+I210204 21:18:00.715186 103 cli/start.go:681 ⋮ node startup completed:
+CockroachDB node starting at 2021-02-04 21:18:00.7150777 +0000 UTC (took 0.1s)
+build:               CCL v20.2.4 @ 2021/01/21 00:08:24 (go1.13.14)
+webui:               ‹http://localhost:8080›
+sql:                 ‹postgresql://root@localhost:26257?sslmode=disable›
+RPC client flags:    ‹cockroach <client cmd> --host=localhost:26257 --insecure›
+logs:                ‹/home/bboyle/github/goLangLearning/cockroachDB/cockroach-data/logs›
+temp dir:            ‹/home/bboyle/github/goLangLearning/cockroachDB/cockroach-data/cockroach-temp896365760›
+external I/O path:   ‹/home/bboyle/github/goLangLearning/cockroachDB/cockroach-data/extern›
+store[0]:            ‹path=/home/bboyle/github/goLangLearning/cockroachDB/cockroach-data›
+storage engine:      pebble
+status:              restarted pre-existing node
+clusterID:           ‹3aa307d8-55bd-4735-8399-6d805969bce5›
+nodeID:              1
+I210204 21:18:00.715277 416 jobs/job_scheduler.go:346 ⋮ [n1] waiting 4m0s before scheduled jobs daemon start
+I210204 21:18:00.715315 402 sql/temporary_schema.go:510 ⋮ [n1] running temporary object cleanup background job
+I210204 21:18:00.721374 402 sql/temporary_schema.go:545 ⋮ [n1] found 0 temporary schemas
+I210204 21:18:00.721403 402 sql/temporary_schema.go:548 ⋮ [n1] early exiting temporary schema cleaner as no temporary schemas were found
+I210204 21:18:00.721412 402 sql/temporary_schema.go:549 ⋮ [n1] completed temporary object cleanup job
+I210204 21:18:00.721422 402 sql/temporary_schema.go:627 ⋮ [n1] temporary object cleaner next scheduled to run at 2021-02-04 21:48:00.7152656 +0000 UTC
+I210204 21:18:00.725662 417 server/server_update.go:55 ⋮ [n1] no need to upgrade, cluster already at the newest version
+I210204 21:18:00.728342 64 sql/sqlliveness/slstorage/slstorage.go:342 ⋮ [n1] inserted sqlliveness session ‹572b30cc22f84d06b7b71e4be4fac282›
+I210204 21:18:00.728380 64 sql/sqlliveness/slinstance/slinstance.go:143 ⋮ [n1] created new SQL liveness session ‹572b30cc22f84d06b7b71e4be4fac282›
+I210204 21:18:00.732411 62 sql/event_log.go:162 ⋮ [n1] Event: ‹"node_restart"›, target: 1, info: ‹{Descriptor:{NodeID:1 Address:localhost:26257 Attrs: Locality: ServerVersion:20.2 BuildTag:v20.2.4 StartedAt:1612473480676889000 LocalityAddress:[] ClusterName: SQLAddress:localhost:26257} ClusterID:3aa307d8-55bd-4735-8399-6d805969bce5 StartedAt:1612473480676889000 LastUp:1612473382406610800}›
+W210204 21:18:01.689854 203 vendor/google.golang.org/grpc/internal/channelz/logging.go:73 ⋮ ‹grpc: addrConn.createTransport failed to connect to {localhost:26259  <nil> 0 <nil>}. Err: connection error: desc = "transport: Error while dialing cannot reuse client connection". Reconnecting...›
+I210204 21:18:01.701867 201 gossip/gossip.go:1508 ⋮ [n1] node has connected to cluster via gossip
+I210204 21:18:01.703298 201 kv/kvserver/stores.go:255 ⋮ [n1] wrote 0 node addresses to persistent storage
+W210204 21:18:10.700730 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:18:10.700878 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 106 MiB RSS, 246 goroutines, 26 MiB/31 MiB/46 MiB GO alloc/idle/total, 12 MiB/30 MiB CGO alloc/total, 0.0 CGO/sec, 0.0/0.0 %(u/s)time, 0.0 %gc (18x), 0 B/0 B (r/w)net
+I210204 21:18:19.116338 63 sql/sqlliveness/slstorage/slstorage.go:320 ⋮ [n1] deleted 1 expired SQL liveness sessions
+W210204 21:18:20.700814 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:18:20.700953 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 108 MiB RSS, 246 goroutines, 23 MiB/33 MiB/47 MiB GO alloc/idle/total, 13 MiB/30 MiB CGO alloc/total, 3.3 CGO/sec, 0.6/0.2 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+I210204 21:18:20.703258 46 kv/kvserver/store.go:2638 ⋮ [n1,s1] sstables (read amplification = 1):
+‹6 [ 2M 1 ]: 2M›
+I210204 21:18:20.703389 46 kv/kvserver/store.go:2639 ⋮ [n1,s1] ‹›
+‹__level_____count____size___score______in__ingest(sz_cnt)____move(sz_cnt)___write(sz_cnt)____read___r-amp___w-amp›
+‹    WAL         2   530 K       -   528 K       -       -       -       -   530 K       -       -       -     1.0›
+‹      0         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      1         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      2         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      3         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      4         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      5         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      6         1   2.0 M       -    55 K     0 B       0     0 B       0   2.0 M       1   2.1 M       1    37.9›
+‹  total         1   2.0 M       -   530 K     0 B       0     0 B       0   2.6 M       1   2.1 M       1     5.0›
+‹  flush         0›
+‹compact         1     0 B          (size == estimated-debt)›
+‹ memtbl         2   2.3 M›
+‹zmemtbl         0     0 B›
+‹   ztbl         0     0 B›
+‹ bcache        25   810 K   87.8%  (score == hit-rate)›
+‹ tcache         1   616 B   99.8%  (score == hit-rate)›
+‹ titers         0›
+‹ filter         -       -   83.2%  (score == utility)›
+W210204 21:18:30.701898 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:18:30.702130 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 108 MiB RSS, 246 goroutines, 18 MiB/37 MiB/47 MiB GO alloc/idle/total, 13 MiB/30 MiB CGO alloc/total, 0.4 CGO/sec, 0.2/0.3 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+I210204 21:18:30.718499 413 jobs/adopt.go:55 ⋮ claimed 1 jobs
+I210204 21:18:30.721893 995 jobs/adopt.go:137 ⋮ job 630461072675143681: resuming execution
+I210204 21:18:30.724345 999 jobs/registry.go:1103 ⋮ [n1] SCHEMA CHANGE GC job 630461072675143681: stepping through state running with error: <nil>
+W210204 21:18:40.701411 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:18:40.701539 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 109 MiB RSS, 250 goroutines, 27 MiB/29 MiB/47 MiB GO alloc/idle/total, 13 MiB/30 MiB CGO alloc/total, 0.1 CGO/sec, 0.4/0.6 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+W210204 21:18:50.702270 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:18:50.702596 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 110 MiB RSS, 250 goroutines, 22 MiB/32 MiB/47 MiB GO alloc/idle/total, 13 MiB/30 MiB CGO alloc/total, 0.1 CGO/sec, 0.7/0.3 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+I210204 21:19:00.700010 47 gossip/gossip.go:568 ⋮ [n1] gossip status (ok, 1 node‹›)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+gossip connectivity
+  n1 [sentinel];
+W210204 21:19:00.702203 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:19:00.702340 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 110 MiB RSS, 251 goroutines, 31 MiB/25 MiB/47 MiB GO alloc/idle/total, 13 MiB/30 MiB CGO alloc/total, 0.1 CGO/sec, 0.6/0.6 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+W210204 21:19:10.702364 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:19:10.702466 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 112 MiB RSS, 249 goroutines, 26 MiB/30 MiB/49 MiB GO alloc/idle/total, 13 MiB/30 MiB CGO alloc/total, 12.3 CGO/sec, 0.6/0.3 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:19:20.703572 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:19:20.703693 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 113 MiB RSS, 249 goroutines, 19 MiB/35 MiB/49 MiB GO alloc/idle/total, 17 MiB/34 MiB CGO alloc/total, 0.2 CGO/sec, 0.6/0.2 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:19:30.703572 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:19:30.703737 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 113 MiB RSS, 249 goroutines, 27 MiB/29 MiB/49 MiB GO alloc/idle/total, 17 MiB/34 MiB CGO alloc/total, 0.1 CGO/sec, 0.7/0.2 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+W210204 21:19:40.703767 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:19:40.703886 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 113 MiB RSS, 250 goroutines, 20 MiB/35 MiB/49 MiB GO alloc/idle/total, 17 MiB/34 MiB CGO alloc/total, 0.1 CGO/sec, 0.3/0.1 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:19:50.703989 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:19:50.704093 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 114 MiB RSS, 250 goroutines, 28 MiB/29 MiB/49 MiB GO alloc/idle/total, 17 MiB/34 MiB CGO alloc/total, 0.1 CGO/sec, 0.4/0.2 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+I210204 21:20:00.699958 47 gossip/gossip.go:568 ⋮ [n1] gossip status (ok, 1 node‹›)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W210204 21:20:00.705913 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:20:00.706028 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 114 MiB RSS, 250 goroutines, 19 MiB/35 MiB/49 MiB GO alloc/idle/total, 17 MiB/34 MiB CGO alloc/total, 0.1 CGO/sec, 0.2/0.3 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:20:10.705956 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:20:10.706184 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 114 MiB RSS, 249 goroutines, 29 MiB/27 MiB/49 MiB GO alloc/idle/total, 17 MiB/34 MiB CGO alloc/total, 0.1 CGO/sec, 0.3/0.1 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+W210204 21:20:20.706790 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:20:20.706908 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 114 MiB RSS, 249 goroutines, 20 MiB/35 MiB/49 MiB GO alloc/idle/total, 17 MiB/34 MiB CGO alloc/total, 0.1 CGO/sec, 0.3/0.2 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:20:30.707897 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:20:30.708001 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 115 MiB RSS, 249 goroutines, 27 MiB/28 MiB/49 MiB GO alloc/idle/total, 17 MiB/34 MiB CGO alloc/total, 0.1 CGO/sec, 0.3/0.0 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+W210204 21:20:40.709025 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:20:40.709196 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 115 MiB RSS, 250 goroutines, 20 MiB/35 MiB/49 MiB GO alloc/idle/total, 17 MiB/34 MiB CGO alloc/total, 0.1 CGO/sec, 0.5/0.0 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:20:50.709465 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:20:50.709571 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 116 MiB RSS, 250 goroutines, 27 MiB/28 MiB/49 MiB GO alloc/idle/total, 17 MiB/34 MiB CGO alloc/total, 0.1 CGO/sec, 0.3/0.0 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+I210204 21:21:00.699854 47 gossip/gossip.go:568 ⋮ [n1] gossip status (ok, 1 node‹›)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W210204 21:21:00.709263 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:21:00.709382 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 116 MiB RSS, 250 goroutines, 19 MiB/35 MiB/49 MiB GO alloc/idle/total, 17 MiB/34 MiB CGO alloc/total, 0.1 CGO/sec, 0.5/0.0 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:21:10.710652 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:21:10.710756 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 116 MiB RSS, 249 goroutines, 29 MiB/27 MiB/49 MiB GO alloc/idle/total, 17 MiB/34 MiB CGO alloc/total, 0.1 CGO/sec, 0.3/0.5 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+W210204 21:21:20.711370 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:21:20.711506 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 116 MiB RSS, 249 goroutines, 22 MiB/33 MiB/49 MiB GO alloc/idle/total, 17 MiB/34 MiB CGO alloc/total, 0.1 CGO/sec, 0.3/0.3 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:21:30.711584 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:21:30.711695 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 117 MiB RSS, 249 goroutines, 29 MiB/26 MiB/49 MiB GO alloc/idle/total, 17 MiB/34 MiB CGO alloc/total, 0.1 CGO/sec, 0.5/0.0 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+W210204 21:21:40.713352 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:21:40.713469 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 118 MiB RSS, 250 goroutines, 19 MiB/35 MiB/50 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.2 CGO/sec, 0.5/0.3 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:21:50.713588 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:21:50.713695 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 119 MiB RSS, 250 goroutines, 26 MiB/29 MiB/50 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.3/0.1 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+I210204 21:22:00.699776 47 gossip/gossip.go:568 ⋮ [n1] gossip status (ok, 1 node‹›)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W210204 21:22:00.714387 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:22:00.714503 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 117 MiB RSS, 250 goroutines, 19 MiB/35 MiB/49 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.1/0.2 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:22:10.716106 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:22:10.716201 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 118 MiB RSS, 249 goroutines, 29 MiB/27 MiB/49 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.5/0.0 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+W210204 21:22:20.716187 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:22:20.716342 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 118 MiB RSS, 249 goroutines, 21 MiB/33 MiB/49 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.6/0.5 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:22:30.716640 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:22:30.716739 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 119 MiB RSS, 249 goroutines, 29 MiB/28 MiB/49 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.2/0.1 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+W210204 21:22:40.717420 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:22:40.717555 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 119 MiB RSS, 250 goroutines, 20 MiB/35 MiB/49 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.4/0.0 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:22:50.717138 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:22:50.717240 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 120 MiB RSS, 250 goroutines, 27 MiB/29 MiB/49 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.4/0.0 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+I210204 21:23:00.700252 47 gossip/gossip.go:568 ⋮ [n1] gossip status (ok, 1 node‹›)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W210204 21:23:00.717531 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:23:00.717689 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 120 MiB RSS, 250 goroutines, 20 MiB/34 MiB/49 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.6/0.5 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:23:10.717805 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:23:10.717949 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 120 MiB RSS, 251 goroutines, 30 MiB/25 MiB/49 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.6/0.8 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+W210204 21:23:20.718506 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:23:20.718629 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 121 MiB RSS, 249 goroutines, 22 MiB/32 MiB/49 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.3/0.3 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:23:30.718541 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:23:30.718666 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 121 MiB RSS, 249 goroutines, 30 MiB/26 MiB/49 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.5/0.3 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+W210204 21:23:40.720652 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:23:40.720771 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 123 MiB RSS, 250 goroutines, 21 MiB/33 MiB/50 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.6/0.2 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:23:50.719408 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:23:50.719544 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 123 MiB RSS, 250 goroutines, 28 MiB/27 MiB/50 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.2/0.0 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+I210204 21:24:00.699695 47 gossip/gossip.go:568 ⋮ [n1] gossip status (ok, 1 node‹›)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W210204 21:24:00.719315 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:24:00.719447 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 123 MiB RSS, 250 goroutines, 21 MiB/33 MiB/50 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.3/0.1 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:24:10.719765 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:24:10.719891 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 124 MiB RSS, 249 goroutines, 30 MiB/25 MiB/50 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.1/0.3 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+W210204 21:24:20.720548 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:24:20.720676 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 124 MiB RSS, 249 goroutines, 24 MiB/31 MiB/50 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 1.0/0.2 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:24:30.720758 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:24:30.720882 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 124 MiB RSS, 249 goroutines, 33 MiB/23 MiB/50 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.0/0.5 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+W210204 21:24:40.720514 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:24:40.720716 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 125 MiB RSS, 250 goroutines, 26 MiB/29 MiB/51 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.1/0.1 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:24:50.720839 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:24:50.721021 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 125 MiB RSS, 250 goroutines, 33 MiB/23 MiB/51 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.2/0.6 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+I210204 21:25:00.700183 47 gossip/gossip.go:568 ⋮ [n1] gossip status (ok, 1 node‹›)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W210204 21:25:00.721674 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:25:00.721894 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 126 MiB RSS, 250 goroutines, 24 MiB/31 MiB/51 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.6/0.2 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+I210204 21:25:07.394056 24 util/log/log_flush.go:100 ⋮ hangup received, flushing logs
+W210204 21:25:10.721669 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:25:10.721855 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 126 MiB RSS, 249 goroutines, 24 MiB/32 MiB/51 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.8/0.1 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:25:20.721837 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:25:20.721996 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 126 MiB RSS, 249 goroutines, 28 MiB/27 MiB/51 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.5/0.0 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+W210204 21:25:30.722417 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:25:30.722706 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 127 MiB RSS, 249 goroutines, 33 MiB/24 MiB/51 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 1.8/0.2 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:25:40.722946 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:25:40.723129 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 128 MiB RSS, 250 goroutines, 29 MiB/26 MiB/51 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.7/0.2 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+W210204 21:25:50.723795 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:25:50.724045 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 128 MiB RSS, 250 goroutines, 20 MiB/34 MiB/51 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.3/0.0 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+I210204 21:26:00.700245 47 gossip/gossip.go:568 ⋮ [n1] gossip status (ok, 1 node‹›)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W210204 21:26:00.723860 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:26:00.724086 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 128 MiB RSS, 252 goroutines, 28 MiB/28 MiB/51 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.8/0.1 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+W210204 21:26:10.724238 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:26:10.724400 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 126 MiB RSS, 247 goroutines, 22 MiB/32 MiB/48 MiB GO alloc/idle/total, 25 MiB/42 MiB CGO alloc/total, 0.1 CGO/sec, 0.7/0.2 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:26:20.724640 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:26:20.724773 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 126 MiB RSS, 250 goroutines, 30 MiB/26 MiB/48 MiB GO alloc/idle/total, 41 MiB/58 MiB CGO alloc/total, 0.2 CGO/sec, 0.5/0.0 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+W210204 21:26:30.725938 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:26:30.726083 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 126 MiB RSS, 249 goroutines, 23 MiB/31 MiB/48 MiB GO alloc/idle/total, 41 MiB/58 MiB CGO alloc/total, 0.1 CGO/sec, 0.2/0.0 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:26:40.725947 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:26:40.726058 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 127 MiB RSS, 250 goroutines, 31 MiB/25 MiB/48 MiB GO alloc/idle/total, 41 MiB/58 MiB CGO alloc/total, 0.1 CGO/sec, 0.4/0.1 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+W210204 21:26:50.725720 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:26:50.725882 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 127 MiB RSS, 250 goroutines, 24 MiB/30 MiB/48 MiB GO alloc/idle/total, 41 MiB/58 MiB CGO alloc/total, 0.1 CGO/sec, 0.3/0.2 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+I210204 21:27:00.700535 47 gossip/gossip.go:568 ⋮ [n1] gossip status (ok, 1 node‹›)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W210204 21:27:00.726309 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:27:00.726439 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 127 MiB RSS, 250 goroutines, 32 MiB/24 MiB/49 MiB GO alloc/idle/total, 41 MiB/58 MiB CGO alloc/total, 0.1 CGO/sec, 0.2/0.0 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+W210204 21:27:10.726495 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:27:10.726646 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 128 MiB RSS, 249 goroutines, 25 MiB/30 MiB/49 MiB GO alloc/idle/total, 41 MiB/58 MiB CGO alloc/total, 0.1 CGO/sec, 0.9/0.6 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:27:20.727016 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:27:20.727243 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 128 MiB RSS, 250 goroutines, 19 MiB/35 MiB/49 MiB GO alloc/idle/total, 41 MiB/58 MiB CGO alloc/total, 0.1 CGO/sec, 0.3/0.2 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:27:30.728117 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:27:30.728234 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 129 MiB RSS, 250 goroutines, 27 MiB/28 MiB/49 MiB GO alloc/idle/total, 41 MiB/58 MiB CGO alloc/total, 0.1 CGO/sec, 0.2/0.1 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+W210204 21:27:40.728527 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:27:40.728695 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 130 MiB RSS, 250 goroutines, 24 MiB/32 MiB/50 MiB GO alloc/idle/total, 41 MiB/58 MiB CGO alloc/total, 0.1 CGO/sec, 0.5/0.2 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:27:50.729395 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:27:50.729494 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 130 MiB RSS, 250 goroutines, 27 MiB/28 MiB/50 MiB GO alloc/idle/total, 41 MiB/58 MiB CGO alloc/total, 0.1 CGO/sec, 0.1/0.1 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+I210204 21:28:00.701364 47 gossip/gossip.go:568 ⋮ [n1] gossip status (ok, 1 node‹›)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+E210204 21:28:00.723601 452 kv/kvserver/queue.go:1202 ⋮ [n1,replicate] 1 replicas failing with ‹"0 of 1 live stores are able to take a new replica for the range (1 already has a replica); likely not enough nodes in cluster"›
+W210204 21:28:00.728909 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:28:00.729022 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 131 MiB RSS, 250 goroutines, 20 MiB/33 MiB/50 MiB GO alloc/idle/total, 41 MiB/58 MiB CGO alloc/total, 0.1 CGO/sec, 0.3/0.5 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:28:10.730108 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:28:10.730239 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 131 MiB RSS, 249 goroutines, 30 MiB/26 MiB/50 MiB GO alloc/idle/total, 41 MiB/58 MiB CGO alloc/total, 0.1 CGO/sec, 0.2/0.0 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+I210204 21:28:20.704330 46 kv/kvserver/store.go:2638 ⋮ [n1,s1] sstables (read amplification = 1):
+‹6 [ 2M 1 ]: 2M›
+I210204 21:28:20.704408 46 kv/kvserver/store.go:2639 ⋮ [n1,s1] ‹›
+‹__level_____count____size___score______in__ingest(sz_cnt)____move(sz_cnt)___write(sz_cnt)____read___r-amp___w-amp›
+‹    WAL         5    16 M       -    16 M       -       -       -       -    16 M       -       -       -     1.0›
+‹      0         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      1         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      2         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      3         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      4         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      5         0     0 B    0.00     0 B     0 B       0     0 B       0     0 B       0     0 B       0     0.0›
+‹      6         1   2.0 M       -    55 K     0 B       0     0 B       0   2.0 M       1   2.1 M       1    37.9›
+‹  total         1   2.0 M       -    16 M     0 B       0     0 B       0    18 M       1   2.1 M       1     1.1›
+‹  flush         0›
+‹compact         1     0 B          (size == estimated-debt)›
+‹ memtbl         5    30 M›
+‹zmemtbl         0     0 B›
+‹   ztbl         0     0 B›
+‹ bcache        26   842 K   97.8%  (score == hit-rate)›
+‹ tcache         1   616 B  100.0%  (score == hit-rate)›
+‹ titers         0›
+‹ filter         -       -   83.2%  (score == utility)›
+W210204 21:28:20.730707 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:28:20.730855 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 133 MiB RSS, 249 goroutines, 20 MiB/33 MiB/52 MiB GO alloc/idle/total, 41 MiB/58 MiB CGO alloc/total, 0.1 CGO/sec, 2.2/0.2 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:28:30.731331 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:28:30.731552 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 133 MiB RSS, 249 goroutines, 28 MiB/27 MiB/52 MiB GO alloc/idle/total, 41 MiB/58 MiB CGO alloc/total, 0.1 CGO/sec, 0.3/0.3 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+W210204 21:28:40.732754 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:28:40.732899 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 134 MiB RSS, 250 goroutines, 20 MiB/33 MiB/52 MiB GO alloc/idle/total, 41 MiB/58 MiB CGO alloc/total, 0.1 CGO/sec, 0.5/0.3 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:28:50.732857 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:28:50.732959 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 134 MiB RSS, 250 goroutines, 28 MiB/27 MiB/52 MiB GO alloc/idle/total, 41 MiB/58 MiB CGO alloc/total, 0.1 CGO/sec, 0.3/0.0 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+I210204 21:29:00.702240 47 gossip/gossip.go:568 ⋮ [n1] gossip status (ok, 1 node‹›)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W210204 21:29:00.733311 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:29:00.733413 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 134 MiB RSS, 250 goroutines, 35 MiB/21 MiB/52 MiB GO alloc/idle/total, 41 MiB/58 MiB CGO alloc/total, 0.1 CGO/sec, 0.4/0.0 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+W210204 21:29:10.734462 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:29:10.734608 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 135 MiB RSS, 249 goroutines, 30 MiB/26 MiB/53 MiB GO alloc/idle/total, 41 MiB/58 MiB CGO alloc/total, 0.1 CGO/sec, 0.5/0.3 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:29:20.735573 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:29:20.735736 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 135 MiB RSS, 249 goroutines, 19 MiB/34 MiB/53 MiB GO alloc/idle/total, 41 MiB/58 MiB CGO alloc/total, 0.1 CGO/sec, 0.5/0.0 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:29:30.736453 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:29:30.736575 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 136 MiB RSS, 249 goroutines, 26 MiB/28 MiB/53 MiB GO alloc/idle/total, 41 MiB/58 MiB CGO alloc/total, 0.1 CGO/sec, 0.5/0.3 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+W210204 21:29:40.736582 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:29:40.736789 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 136 MiB RSS, 250 goroutines, 19 MiB/34 MiB/53 MiB GO alloc/idle/total, 41 MiB/58 MiB CGO alloc/total, 0.1 CGO/sec, 0.3/0.2 %(u/s)time, 0.0 %gc (1x), 0 B/0 B (r/w)net
+W210204 21:29:50.737583 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:29:50.737681 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 136 MiB RSS, 250 goroutines, 26 MiB/28 MiB/53 MiB GO alloc/idle/total, 41 MiB/58 MiB CGO alloc/total, 0.1 CGO/sec, 0.4/0.1 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
+I210204 21:30:00.702924 47 gossip/gossip.go:568 ⋮ [n1] gossip status (ok, 1 node‹›)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+W210204 21:30:00.738684 371 server/status/runtime.go:459 ⋮ [n1] problem fetching disk stats: open ‹/proc/diskstats›: no such file or directory; disk stats will be empty.
+I210204 21:30:00.738790 371 server/status/runtime.go:522 ⋮ [n1] runtime stats: 136 MiB RSS, 249 goroutines, 34 MiB/22 MiB/53 MiB GO alloc/idle/total, 41 MiB/58 MiB CGO alloc/total, 0.1 CGO/sec, 0.3/0.3 %(u/s)time, 0.0 %gc (0x), 0 B/0 B (r/w)net
