@@ -1,10 +1,26 @@
 #!/bin/bash
 
-cd /home/bboyle/github/goLangLearning/cockroachDB/
-#./startDB.sh $
+# start the db
+./startDB.sh &
+wait
+echo ""
+echo "####################################"
+echo "---DATABASE STARTED---"
+echo "####################################"
+sleep 3
 
-./connectDB.sh
+# create and populate tables
+cockroach sql --insecure < creates.sql
+echo ""
+echo "####################################"
+echo "---TABLES CRATED AND POPPULATED---"
+echo "####################################"
 
-use apnews_db;
+# run scraper
+./articleScrapeDB
+echo "####################################"
+echo "--- WEBSITE SCRAPED AND DATA UPLOADED---"
+echo "####################################"
+echo ""
 
-select * from article;
+cockroach sql --execute="use apnews_db; select * from article;" --insecure

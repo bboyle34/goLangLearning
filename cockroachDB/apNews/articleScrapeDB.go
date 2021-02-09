@@ -93,14 +93,29 @@ func main() {
         if len(link) > 8 && count < crawlTime{
             // make sure our link is an article, that's where we want our data
             if link[1:8] == "article" {
-                // reset header and para for each page
-                nextID := maxID() + 1
-                insertDB(nextID, link, h1, p)
-                header = 0
-                para = 0
-                h1 = ""
-                p = ""
-                c.Visit(e.Request.AbsoluteURL(link))
+                if h1 != "" || p != "" {
+                    // reset header and para for each page
+                    nextID := maxID() + 1
+                    // format input
+                    if len(h1) > 50 {
+                        h1 = h1[0:50]
+                    }
+                    if len(p) > 100 {
+                        p = p[0:100]
+                    }
+                    if len(link) > 30 {
+                        insertDB(nextID, link[0:30], h1, p)
+                    } else {
+                        insertDB(nextID, link, h1, p)
+                    }
+                    header = 0
+                    para = 0
+                    h1 = ""
+                    p = ""
+                    c.Visit(e.Request.AbsoluteURL(link))
+                } else {
+                    c.Visit(e.Request.AbsoluteURL(link))
+                }
             }
         }
         count++
