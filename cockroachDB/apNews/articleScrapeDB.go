@@ -56,7 +56,7 @@ func main() {
     fmt.Println()
 
     // USE THIS VARIABLE TO LIMIT YOUR CRAWL
-    crawlTime := 250
+    crawlTime := 500
     // ANYTHING OVER 1000 WILL TAKE A LONG TIME
 
     c := colly.NewCollector(
