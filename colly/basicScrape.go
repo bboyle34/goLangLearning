@@ -16,11 +16,8 @@ func writeFile(filename string, data []string) error {
         return err
     }
     defer file.Close()
-<<<<<<< HEAD
-    fmt.Printf("\n%T\n", file)
-=======
 
->>>>>>> 1ce437176c86b25cc9dc3d3cabe86578e9af6dbc
+    fmt.Printf("\n%T\n", file)
     fmt.Fprintln(file, "")
     fmt.Fprintln(file, "####################")
     fmt.Fprintln(file, "Links for apnews.com")
@@ -49,7 +46,7 @@ func main() {
         // maxdepth is 1, so only the links on the scraped page
         // are visited, and not further links are followed
         colly.MaxDepth(3),
-        colly.AllowedDomains("apnews.com"),
+        colly.AllowedDomains("www.pbs-sales.com"),
     )
 
     var data []string
@@ -83,6 +80,6 @@ func main() {
     })
 
     // start scraping on some sites
-    c.Visit("https://apnews.com/")
+    c.Visit("https://www.pbs-sales.com")
     writeFile("output.txt", data)
 }
